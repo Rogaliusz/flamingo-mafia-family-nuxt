@@ -1,0 +1,126 @@
+.h-title {
+  margin-top: 35px;
+}
+
+.fraction-item {
+  display: flex;
+  margin-top: 40px;
+  border: 2px solid white;
+  border-style: solid;
+  transition: all 0.2s ease-in-out;
+  background-color: #1a1a1b;
+  cursor: pointer;
+}
+
+.fraction-item:hover {
+  transform: scale(1.2) !important;
+}
+
+.fraction-item:hover h3 {
+  color: #f7a234 !important;
+}
+
+.fraction-item:hover h2 {
+  color: #f7a234 !important;
+}
+
+@media (max-width: 900px) {
+  .fmf-fractions {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.fraction > h3 {
+  padding-top: 40px;
+  text-align: center;
+  font-size: 36;
+}
+
+.fraction-card {
+  width: 300px;
+}
+
+.fraction-card > h3 {
+  padding-top: 40px;
+  text-align: center;
+  font-size: 36;
+}
+
+.fraction-content {
+  padding-top: 20px;
+}
+
+.fraction-content-left {
+  text-align: left;
+  margin-left: 60px;
+  border: 1pt;
+}
+
+.fraction-content-left > h2 {
+  margin-top: 0px;
+}
+
+.fraction-content-right {
+  margin-left: auto;
+}
+
+.fraction-content-right {
+  margin-right: 60px;
+  margin-left: auto;
+}
+
+.fraction-content-right > h2 {
+  margin-top: 0px;
+  text-align: right;
+}
+
+.fraction-content-right > h3 {
+  text-align: right;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .fraction-item {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .fraction-item:hover {
+    transform: none;
+  }
+
+  .fraction-content {
+    padding-top: 20px;
+  }
+
+  .fraction-content-right {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+
+  .fraction-content-left {
+    text-align: center;
+    margin-left: 0px;
+  }
+
+  .fraction-content-right > h2 {
+    margin-top: 0px;
+    text-align: center;
+  }
+
+  .fraction-content-right > h3 {
+    text-align: center;
+  }
+
+  .fraction-card {
+    width: 100%;
+  }
+
+  .fraction-item:hover {
+    transform: none;
+  }
+}
