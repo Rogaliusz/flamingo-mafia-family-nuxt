@@ -19,7 +19,7 @@
     <div
       class="fraction-item"
       style=""
-      data-aos="fade-left"
+      data-aos="fade-right"
       data-aos-duration="1000"
     >
       <div class="fraction">
@@ -48,7 +48,7 @@
       </div>
     </div>
 
-    <div class="fraction-item" data-aos="fade-left" data-aos-duration="1000">
+    <div class="fraction-item" data-aos="fade-right" data-aos-duration="1000">
       <div class="fraction">
         <img src="@/static/assets/boss.webp" width="300" height="300" />
       </div>

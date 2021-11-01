@@ -1,5 +1,5 @@
 <template>
-  <div class="minting-section" id="mint">
+  <div id="mint" class="minting-section">
     <h2 data-aos="fade-up" data-aos-duration="1000">Mint</h2>
     <div class="minting-container">
       <div class="minting-gateway-container">
@@ -29,7 +29,21 @@
         </h3>
       </div>
     </div>
-    <div>
+    <div
+      v-if="!connected"
+      class="mint-form"
+      data-aos-duration="1000"
+      data-aos="fade-up"
+    >
+      <button
+        class="minting-button"
+        style="width: 100%"
+        @click="connectToMetamask()"
+      >
+        <h3 style="width: 100%; margin: 20px 0px">Connect to a Metamask</h3>
+      </button>
+    </div>
+    <div v-if="connected">
       <div class="mint-form" data-aos="fade-up" data-aos-duration="1000">
         <div v-if="invalidNetwork == true" style="margin: 20px 0px">
           <h3>Flamingo Mafia Family is built on Matic Polygon Network!</h3>
@@ -37,6 +51,7 @@
             To mint it, please change Metamask network to polygon (137) -
             (https://polygon-rpc.com/).
           </h3>
+          <h3>We recommend use the Chrome browser on Your pc.</h3>
           <h3 style="margin-top: 5px">
             <a
               class="mint-link"
@@ -50,16 +65,16 @@
             <h3>Minted: {{ minted }} / {{ total }}</h3>
 
             <div class="minting-eth">
-              <button v-on:click="decrease()" class="minting-count-btn">
+              <button class="minting-count-btn" @click="decrease()">
                 <h3>-</h3>
               </button>
               <h3>{{ count }}</h3>
-              <button v-on:click="inrecease()" class="minting-count-btn">
+              <button class="minting-count-btn" @click="inrecease()">
                 <h3>+</h3>
               </button>
             </div>
           </div>
-          <button v-on:click="click()" class="minting-button">
+          <button class="minting-button" @click="click()">
             <h3 style="width: 100%">
               Mint ({{ (count * (cost / 1000000000000000000)).toFixed(2) }}
               MATIC)
@@ -86,20 +101,45 @@ export default {
     error: '',
     invalidNetwork: true,
     smartContract: undefined,
+    connected: false,
   }),
   computed: {},
   async mounted() {
-    const { ethereum } = window
-    Web3EthContract.setProvider(ethereum)
-    this.smartContract = new Web3EthContract(
-      abi,
-      Configuration.smartContractAddress
-    )
+    try {
+      const { ethereum } = window
+      Web3EthContract.setProvider(ethereum)
+      this.smartContract = new Web3EthContract(
+        abi,
+        Configuration.smartContractAddress
+      )
 
-    await this.checkNetwork(ethereum)
-    await this.refreshData()
+      const accounts = await ethereum.request({
+        method: 'eth_requestAccounts',
+      })
+
+      this.connected = accounts.length !== 0
+      if (!this.connected) {
+        return
+      }
+
+      await this.checkNetwork(ethereum)
+      await this.refreshData()
+    } catch (exception) {}
   },
   methods: {
+    async connectToMetamask() {
+      try {
+        const { ethereum } = window
+        Web3EthContract.setProvider(ethereum)
+        this.smartContract = new Web3EthContract(
+          abi,
+          Configuration.smartContractAddress
+        )
+        await ethereum.request({
+          method: 'eth_requestAccounts',
+        })
+      } catch (exception) {}
+    },
     async refreshData() {
       this.total = await this.smartContract.methods.maxSupply().call()
       this.minted = await this.smartContract.methods.totalSupply().call()

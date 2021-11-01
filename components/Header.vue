@@ -1,7 +1,7 @@
 <template>
   <div id="header" class="header">
     <section id="nav" class="nav">
-      <div v-if="!mobile" id="navbar" class="menu">
+      <div v-if="!$device.isMobile" id="navbar" class="menu">
         <ul>
           <li><a href="/traits/">Traits</a></li>
           <li><a href="/#faq">FAQ</a></li>
@@ -13,16 +13,13 @@
       </div>
 
       <Burger
-        v-if="mobile"
+        v-if="$device.isMobile"
         style="padding-top: 15px; padding-left: 15px"
-        @click="$refs.sidebar.openSidebarPanel()"
+        @click.native="openSidebar()"
       ></Burger>
 
-      <Sidebar ref="sidebar" class="sidebar">
-        <ul
-          class="sidebar-panel-nav"
-          @click="$refs.sidebar.closeSidebarPanel()"
-        >
+      <Sidebar ref="sidebar" class="sidebar" @click.native="closeSidebar()">
+        <ul class="sidebar-panel-nav">
           <li><a href="/traits/">Traits</a></li>
           <li><a href="/#faq">FAQ</a></li>
           <li><a href="/#mint">Mint</a></li>
@@ -45,25 +42,12 @@ export default {
     Burger,
     Sidebar,
   },
-  data: () => ({
-    mobile: false,
-  }),
-  mounted() {
-    this.mobile = this.isMobile()
-
-    this.$forceUpdate()
-  },
   methods: {
-    isMobile() {
-      if (
-        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-          navigator.userAgent
-        )
-      ) {
-        return true
-      } else {
-        return false
-      }
+    openSidebar() {
+      this.$refs.sidebar.openSidebarPanel()
+    },
+    closeSidebar() {
+      this.$refs.sidebar.closeSidebarPanel()
     },
   },
 }
@@ -113,8 +97,7 @@ export default {
 
 @media only screen and (max-width: 768px) {
   .nav {
-    background: var(--background) url(@/static/assets/city.webp) center center
-      no-repeat;
+    background: #f7a234 url(@/static/assets/city.webp) center center no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

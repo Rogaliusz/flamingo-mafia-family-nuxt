@@ -27,6 +27,12 @@
           rel="noreferrer"
           >OpenSea</a
         >
+        <a
+          href="https://flamingomafiafamily.medium.com/"
+          target="_blank"
+          rel="noreferrer"
+          >Medium</a
+        >
       </div>
       <div class="footer-section jump-to">
         <h2>Jump to</h2>
@@ -42,6 +48,12 @@
     <h3 style="padding: 30px">
       Copyright © 2021 The Flamingo Mafia Family. All rights reserved.
     </h3>
+    <a
+      style="margin-top: -30px"
+      href="https://polygonscan.com/address/0xa2ba2540b950d7b2dab38f1ef08681811ce82ad3"
+    >
+      0xa2Ba2540B950D7B2dAb38F1EF08681811cE82aD3</a
+    >
   </div>
 </template>
 <script>

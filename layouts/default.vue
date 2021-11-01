@@ -5,7 +5,7 @@
     <!-- No RiskNoFun, let's go deeper my friend... ?-->
     <Header></Header>
 
-    <div id="content" class="content-container"><Nuxt></Nuxt>></div>
+    <div id="content" class="content-container"><Nuxt></Nuxt></div>
     <Footer />
   </div>
 </template>
@@ -13,8 +13,6 @@
 // @ is an alias to /src
 import Web3EthContract from 'web3-eth-contract'
 import AOS from 'aos'
-import abi from '@/static/abi.json'
-import Configuration from '@/static/configuration.json'
 import 'aos/dist/aos.css' // You can also use <link> for styles
 
 function detectMetaMask() {
@@ -22,17 +20,8 @@ function detectMetaMask() {
   return ethereum && ethereum.isMetaMask
 }
 
-const smartContract = new Web3EthContract(
-  abi,
-  Configuration.smartContractAddress
-)
-
 export default {
   name: 'Home',
-  data: () => ({
-    hasReveal: false,
-  }),
-
   updated() {
     setTimeout(() => {
       AOS.init({
@@ -63,42 +52,6 @@ export default {
     ethereum.on('accountsChanged', () => {
       window.location.reload()
     })
-
-    this.loadData(this)
-  },
-  methods: {
-    loadData: async (component) => {
-      const { ethereum } = window
-      await ethereum.enable()
-      const accounts = await ethereum.request({
-        method: 'eth_requestAccounts',
-      })
-
-      await smartContract.setProvider(ethereum)
-
-      const nfts = await smartContract.methods
-        .getMyTokensUri()
-        .call({ from: accounts[0] })
-
-      const collection = []
-
-      if (nfts && nfts.length !== 0) {
-        nfts.forEach((nft) => {
-          const structure = {
-            id: nft[0],
-            url: nft[1],
-            revelated: nft[2],
-          }
-
-          collection.push(structure)
-        })
-
-        component.hasReveal =
-          collection.filter((x) => !x.revelated).length !== 0
-      }
-
-      component.$forceUpdate()
-    },
   },
 }
 </script>

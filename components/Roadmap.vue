@@ -142,8 +142,6 @@
   </div>
 </template>
 <script>
-import 'aos/dist/aos.css' // You can also use <link> for styles
-
 export default {
   name: 'fmfRoadmap',
 }
