@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Flamingo Mafia Family - NFT Collection',
+    title: 'Flamingo Mafia Family | Polygon NFT Collection',
     htmlAttrs: {
       lang: 'en',
     },
@@ -12,7 +12,7 @@ export default {
         hid: 'description',
         name: 'description',
         content:
-          'Polygon NFT collection created from over 140 different traits. Flamingo NFT collection',
+          'Polygon NFT collection created from over 140 different traits. Has a rich long term roadmap. Every holder can got a free Flamingo Punk, Matic or other exciting things! It is a best nft art finance!',
       },
       { name: 'format-detection', content: 'telephone=no' },
     ],
