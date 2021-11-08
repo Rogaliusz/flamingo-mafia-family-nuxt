@@ -4,7 +4,8 @@
       <div class="minting-desc">
         <h2>Why is it worth being part of the Flamingo Mafia Family?</h2>
         <h3>
-          1. Every Flamingo holder will recive free Flamingo Punk. 1 FMF = 1 FP.
+          1. Every Flamingo holder will receive a free Flamingo Punk. 1 FMF = 1
+          FP.
         </h3>
         <h3>
           2. 100 Random flamingo holders get 25% of the secondary sales fees
