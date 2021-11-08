@@ -3,10 +3,10 @@
     <div
       class="sidebar-backdrop"
       @click="closeSidebarPanel"
-      v-if="isPanelOpen"
+      v-show="isPanelOpen"
     ></div>
     <transition name="slide">
-      <div v-if="isPanelOpen" class="sidebar-panel">
+      <div v-show="isPanelOpen" class="sidebar-panel">
         <slot></slot>
       </div>
     </transition>
@@ -19,13 +19,13 @@ export default {
   }),
   methods: {
     closeSidebarPanel() {
-      this.isPanelOpen = false;
+      this.isPanelOpen = false
     },
     openSidebarPanel() {
-      this.isPanelOpen = true;
+      this.isPanelOpen = true
     },
   },
-};
+}
 </script>
 <style>
 .slide-enter-active,

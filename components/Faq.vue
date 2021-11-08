@@ -10,7 +10,7 @@
         @click="f1 = !f1"
       >
         <h3>How many NFTs will The Flamingo Mafia include?</h3>
-        <h3 v-if="f1">
+        <h3 v-show="f1">
           The collection will include 10101 unique Flamingos. The collection was
           built from over 140 different traits. A detailed list is available on
           the website in section - traits.
@@ -24,7 +24,7 @@
         @click="f2 = !f2"
       >
         <h3>What is the hierarchy system?</h3>
-        <h3 v-if="f2">
+        <h3 v-show="f2">
           The hierarchy system is a unique Flamingo Mafia Family feature. There
           are 4 Flamingo groups with a limited count - Soldiers (7777),
           Caporegimes (1813), Consiglieres (400) & Bosses (111). Every group has
@@ -40,7 +40,7 @@
         @click="f3 = !f3"
       >
         <h3>Why was the Flamingo Mafia Family built on the Polygon Network?</h3>
-        <h3 v-if="f3">
+        <h3 v-show="f3">
           Polygon network is fast & cheap blockchain technology. Every
           transaction related to Flamingo transporting is very cheap. It is also
           supported by OpenSea market, the biggest NFT marketplace.
@@ -54,7 +54,7 @@
         @click="f4 = !f4"
       >
         <h3>Where can I buy Flamingos?</h3>
-        <h3 v-if="f4">
+        <h3 v-show="f4">
           In the minting phase, every Flamingo NFT can be minted on this website
           by interacting with the Polygon network contract. Every Flamingo is
           going to be revealed from an egg. Every holder can reveal their own
@@ -70,7 +70,7 @@
         @click="f5 = !f5"
       >
         <h3>What is the reveal feature & how to use it?</h3>
-        <h3 v-if="f5">
+        <h3 v-show="f5">
           Every Flamingo is hiding in an egg. The holder can reveal this egg and
           see exactly what Flamingo type they got! To do this, he must go to the
           Reveal section which is only visible for Flamingo Mafia Family
@@ -86,7 +86,7 @@
         @click="f7 = !f7"
       >
         <h3>Where can I find more Flamingos, to see how they look?</h3>
-        <h3 v-if="f7">
+        <h3 v-show="f7">
           NFT pictures are regularly published on our Twitter :-)
         </h3>
       </div>
@@ -98,7 +98,7 @@
         @click="f6 = !f6"
       >
         <h3>Who is The Flamingo Mafia Family Team?</h3>
-        <h3 v-if="f6">
+        <h3 v-show="f6">
           The Flamingo Mafia Family was created only by one person -
           DonFlamingo. He is an artist, developer, marketer & NFT aficionado who
           wants to change his life by building the best community on the Polygon

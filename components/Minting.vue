@@ -30,7 +30,7 @@
       </div>
     </div>
     <div
-      v-if="!connected"
+      v-show="!connected"
       class="mint-form"
       data-aos-duration="1000"
       data-aos="fade-up"
@@ -43,9 +43,9 @@
         <h3 style="width: 100%; margin: 20px 0px">Connect to a Metamask</h3>
       </button>
     </div>
-    <div v-if="connected">
+    <div v-show="connected">
       <div class="mint-form" data-aos="fade-up" data-aos-duration="1000">
-        <div v-if="invalidNetwork == true" style="margin: 20px 0px">
+        <div v-show="invalidNetwork == true" style="margin: 20px 0px">
           <h3>Flamingo Mafia Family is built on Matic Polygon Network!</h3>
           <h3>
             To mint it, please change Metamask network to polygon (137) -
@@ -60,7 +60,7 @@
             >
           </h3>
         </div>
-        <div v-if="invalidNetwork == false">
+        <div v-show="invalidNetwork == false">
           <div style="margin-top: 10px">
             <h3>Minted: {{ minted }} / {{ total }}</h3>
 

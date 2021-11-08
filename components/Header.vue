@@ -1,7 +1,7 @@
 <template>
   <div id="header" class="header">
     <section id="nav" class="nav">
-      <div v-if="!$device.isMobile" id="navbar" class="menu">
+      <div v-show="!$device.isMobile" id="navbar" class="menu">
         <ul>
           <li><a href="/traits/">Traits</a></li>
           <li><a href="/#faq">FAQ</a></li>
@@ -13,7 +13,7 @@
       </div>
 
       <Burger
-        v-if="$device.isMobile"
+        v-show="$device.isMobile"
         style="padding-top: 15px; padding-left: 15px"
         @click.native="openSidebar()"
       ></Burger>

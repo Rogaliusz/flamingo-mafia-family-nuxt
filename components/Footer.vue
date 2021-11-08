@@ -38,7 +38,7 @@
         <h2>Jump to</h2>
         <a href="/traits/">Traits</a>
         <a href="/#faq">FAQ</a>
-        <a v-if="hasReveal" href="/#reveal">Reveal</a>
+        <a v-show="hasReveal" href="/#reveal">Reveal</a>
         <a href="/#mint">Mint</a>
         <a href="/#roadmap">Roadmap</a>
         <a href="/#hierarchy">Hierarchy</a>
