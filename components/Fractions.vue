@@ -1,6 +1,8 @@
 <template>
   <div id="hierarchy">
-    <h2 class="h-title">Hierarchy</h2>
+    <h2 class="h-title" data-aos="fade-right" data-aos-duration="1000">
+      Hierarchy
+    </h2>
 
     <div class="fraction-item" data-aos="fade-right" data-aos-duration="1000">
       <div class="fraction">
