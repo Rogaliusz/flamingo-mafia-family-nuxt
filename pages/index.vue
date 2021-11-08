@@ -1,9 +1,9 @@
 <template>
   <div>
     <About />
-    <Fractions />
-    <Roadmap />
     <Minting />
+    <Roadmap />
+    <Fractions />
     <Faq />
   </div>
 </template>

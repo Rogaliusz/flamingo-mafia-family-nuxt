@@ -27,7 +27,7 @@ export default {
   },
 }
 </script>
-<style>
+<style lang="scss">
 .slide-enter-active,
 .slide-leave-active {
   transition: transform 0.2s ease;
@@ -51,7 +51,7 @@ export default {
 
 .sidebar-panel {
   overflow-y: auto;
-  background-color: #f7a234;
+  background-color: $primary-bk;
   position: fixed;
   left: 0;
   top: 0;
@@ -59,5 +59,6 @@ export default {
   z-index: 999;
   padding: 10px 20px 2rem 20px;
   width: 150px;
+  border-right: 2px solid white;
 }
 </style>

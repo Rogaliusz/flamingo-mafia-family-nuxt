@@ -8,6 +8,16 @@
         data-aos-duration="1000"
       >
         <div class="roadmap-progress">
+          <h2>3%</h2>
+        </div>
+
+        <div
+          class="roadmap-divider"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        ></div>
+
+        <div class="roadmap-progress">
           <h2>7%</h2>
         </div>
 
@@ -75,6 +85,18 @@
       </div>
 
       <div class="roadmap-content-container">
+        <div
+          class="roadmap-description"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
+          <h2>Punks not dead</h2>
+          <h3>
+            Every Flamingo NFT will get a free airdrop for a Flamingo Punk NFT.
+            1 FMF = 1 FP
+          </h3>
+        </div>
+
         <div
           class="roadmap-description"
           data-aos="fade-up"

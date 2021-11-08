@@ -3,7 +3,7 @@
     <!-- Congrats my Friend! Good to se You - Don Flamingo -->
     <!-- Are You sure if You want go the darker cave, Romeo?-->
     <!-- No RiskNoFun, let's go deeper my friend... ?-->
-    <Header></Header>
+    <HeaderNew></HeaderNew>
 
     <div id="content" class="content-container"><Nuxt></Nuxt></div>
     <Footer />
@@ -62,7 +62,7 @@ html {
 }
 
 .content-container {
-  max-width: 1265px;
+  max-width: $width;
   padding: 0 20px;
   margin: 0 auto;
 }

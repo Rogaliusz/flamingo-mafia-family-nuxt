@@ -14,7 +14,7 @@
     </h3>
 
     <div class="traits-container">
-      <div class="trait" data-aos="fade-up" data-aos-duration="1000">
+      <div class="trait">
         <h3 v-show="!$device.isMobile" style="flex-basis: 25%">Index</h3>
         <h3 style="flex-basis: 25%">Trait type</h3>
         <h3 style="flex-basis: 25%">Value</h3>

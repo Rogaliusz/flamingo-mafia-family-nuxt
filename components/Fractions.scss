@@ -10,6 +10,8 @@
   transition: all 0.2s ease-in-out;
   background-color: #1a1a1b;
   cursor: pointer;
+  border-top-right-radius: calc(40 * 1px);
+  border-bottom-right-radius: calc(40 * 1px);
 }
 
 .fraction-item:hover {
@@ -28,6 +30,11 @@
   .fmf-fractions {
     display: flex;
     flex-direction: column;
+  }
+
+  .fraction-item {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
   }
 }
 

@@ -33,6 +33,9 @@
           rel="noreferrer"
           >Medium</a
         >
+        <a href="https://flamingopunks.com/" target="_blank" rel="noreferrer"
+          >Flamingo Punks</a
+        >
       </div>
       <div class="footer-section jump-to">
         <h2>Jump to</h2>

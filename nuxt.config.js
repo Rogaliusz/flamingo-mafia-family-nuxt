@@ -22,7 +22,11 @@ export default {
   target: 'static',
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['@/static/index.css'],
+  css: ['@/static/index.scss'],
+
+  styleResources: {
+    scss: ['@/static/*.scss'],
+  },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],

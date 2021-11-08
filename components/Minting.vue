@@ -1,20 +1,11 @@
 <template>
   <div id="mint" class="minting-section">
-    <h2 data-aos="fade-up" data-aos-duration="1000">Mint</h2>
-    <div class="minting-container">
-      <div class="minting-gateway-container">
-        <img
-          class="minting-gateway"
-          data-aos="fade-left"
-          data-aos-duration="1000"
-          src="@/static/assets/eggs.webp"
-          width="300"
-          height="300"
-        />
-      </div>
-      <div class="minting-desc" data-aos="fade-right" data-aos-duration="1000">
+    <div class="card">
+      <div class="minting-desc">
         <h2>Why is it worth being part of the Flamingo Mafia Family?</h2>
-        <h3>1. Every Flamingo egg can be revealed by its holder.</h3>
+        <h3>
+          1. Every Flamingo holder will recive free Flamingo Punk. 1 FMF = 1 FP.
+        </h3>
         <h3>
           2. 100 Random flamingo holders get 25% of the secondary sales fees
           collected on OpenSea.
@@ -27,6 +18,7 @@
           5. Flamingos are built on the Polygon Network so gas fees are
           incredibly small!
         </h3>
+        <h3>6. Rich, long-term Roadmap.</h3>
       </div>
     </div>
     <div
@@ -51,7 +43,7 @@
             To mint it, please change Metamask network to polygon (137) -
             (https://polygon-rpc.com/).
           </h3>
-          <h3>We recommend use the Chrome browser on Your pc.</h3>
+          <h3>Is recommend to use the Chrome / Brave browser on Your pc.</h3>
           <h3 style="margin-top: 5px">
             <a
               class="mint-link"
@@ -229,6 +221,7 @@ export default {
   border: 2px solid white;
   border-style: solid;
   background-color: #1a1a1b;
+  border-radius: calc(40 * 1px);
 }
 
 .mint-form:hover {
@@ -276,6 +269,7 @@ export default {
   border: 2px solid white;
   border-style: solid;
   background-color: #1a1a1b;
+  border-radius: calc(40 * 1px);
 }
 
 .minting-button {
@@ -289,6 +283,7 @@ export default {
   background-color: #1a1a1b;
   width: 100%;
   padding-top: 20px;
+  border-radius: calc(40 * 1px);
 
   transition: all 0.5s linear;
   transition: width 1s ease-in-out;
