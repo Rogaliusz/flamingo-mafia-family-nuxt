@@ -161,7 +161,7 @@ export default {
 
       this.smartContract.methods
         .mint(address, this.count)
-        .send({ from: address, value: calculatedCost })
+        .send({ from: address, value: calculatedCost, gasLimit: '285000' })
         .on('recipt', () => window.reload())
 
       this.error = '- miniting...'
