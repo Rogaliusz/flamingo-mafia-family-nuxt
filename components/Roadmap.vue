@@ -92,8 +92,8 @@
         >
           <h2>Punks not dead</h2>
           <h3>
-            Every Flamingo NFT will get a free airdrop for a Flamingo Punk NFT.
-            1 FMF = 1 FP
+            Every Flamingo NFT Holder will get a free Flamingo Punk NFT airdrop
+            . 1 FMF = 1 FP
           </h3>
         </div>
 
