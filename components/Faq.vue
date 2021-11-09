@@ -140,6 +140,7 @@ export default {
   border-style: solid;
   gap: 30px;
   background-color: #1a1a1b;
+  border-radius: calc(40 * 1px);
 
   transition: all 0.5s linear;
   transition: width 1s ease-in-out;
