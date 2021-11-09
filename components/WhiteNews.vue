@@ -2,7 +2,7 @@
   <div v-show="!closed" class="white-paper">
     <h1>Flamingo Punks Airdrop!</h1>
     <h3>
-      Every Flamingo Holder at 22 November 2021 will recive a free Flamingo
+      Every Flamingo Holder at 22 November 2021 will receive a free Flamingo
       Punk!
     </h3>
     <h3>
@@ -14,7 +14,7 @@
     </h3>
     <br />
     <h3>
-      <a @click="close()" class="close">[Close]</a>
+      <a class="close" @click="close()">[Close]</a>
     </h3>
     <br />
   </div>
