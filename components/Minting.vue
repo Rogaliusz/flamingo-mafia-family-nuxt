@@ -33,7 +33,9 @@
         style="width: 100%"
         @click="connectToMetamask()"
       >
-        <h3 style="width: 100%; margin: 20px 0px">Connect to a Metamask</h3>
+        <h3 style="width: 100%; margin: 20px 0px">
+          To mint a fresh Flamingo, please connect to a Metamask
+        </h3>
       </button>
     </div>
     <div v-show="connected">
