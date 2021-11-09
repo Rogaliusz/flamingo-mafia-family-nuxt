@@ -50,7 +50,7 @@
           <h3 style="margin-top: 5px">
             <a
               class="mint-link"
-              href="https://support.opensea.io/hc/en-us/articles/1500011368842-How-can-I-switch-my-wallet-to-blockchains-like-Polygon-"
+              href=" https://medium.com/stakingbits/setting-up-metamask-for-polygon-matic-network-838058f6d844"
               >Click here to check how to do this</a
             >
           </h3>

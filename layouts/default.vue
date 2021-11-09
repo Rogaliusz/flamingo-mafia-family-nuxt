@@ -7,6 +7,7 @@
 
     <div id="content" class="content-container"><Nuxt></Nuxt></div>
     <Footer />
+    <WhiteNews class="news"></WhiteNews>
   </div>
 </template>
 <script>
@@ -96,5 +97,13 @@ h3 {
   margin: 0;
 
   color: #ffffff;
+}
+
+.news {
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  position: fixed;
+  height: auto;
 }
 </style>
