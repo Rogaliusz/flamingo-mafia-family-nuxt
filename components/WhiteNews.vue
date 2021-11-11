@@ -13,9 +13,7 @@
       >
     </h3>
     <br />
-    <h3>
-      <a class="close" @click="close()">[Close]</a>
-    </h3>
+    <h3 class="close" @click="close()">[Close]</h3>
     <br />
   </div>
 </template>
@@ -28,6 +26,7 @@ export default {
     close() {
       this.closed = true
       this.$forceUpdate()
+      this.$gtm.push({ event: 'close-news' })
     },
   },
 }
@@ -56,6 +55,10 @@ export default {
 }
 
 .close {
+  cursor: pointer;
+}
+
+.close:hover {
   color: darkred;
   cursor: pointer;
 }
