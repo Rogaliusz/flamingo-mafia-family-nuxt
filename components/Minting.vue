@@ -118,6 +118,8 @@ export default {
         return
       }
 
+      this.$gtm.push({ event: 'metamask-connected' })
+
       await this.checkNetwork(ethereum)
       await this.refreshData()
     } catch (exception) {}
@@ -152,6 +154,9 @@ export default {
 
       // eslint-disable-next-line eqeqeq
       this.invalidNetwork = networkId != Configuration.network
+      if (!this.invalidNetwork) {
+        this.$gtm.push({ event: 'correct-network' })
+      }
 
       this.$forceUpdate()
     },
