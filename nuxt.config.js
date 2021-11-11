@@ -29,8 +29,24 @@ export default {
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ['~/plugins/gtm'],
 
+  gtm: {
+    id: process.env.GTM_ID || 'GTM-TFXMRV3',
+    scriptDefer: true,
+    pageTracking: true,
+    enabled: true,
+    // layer: 'test',
+    variables: {
+      test: '1',
+    },
+  },
+
+  publicRuntimeConfig: {
+    gtm: {
+      id: 'GTM-TFXMRV3&runtime',
+    },
+  },
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
@@ -43,7 +59,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ['@nuxtjs/gtm'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
