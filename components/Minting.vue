@@ -51,7 +51,7 @@
           <h3 style="margin-top: 5px">
             <a
               class="mint-link"
-              href=" https://medium.com/stakingbits/setting-up-metamask-for-polygon-matic-network-838058f6d844"
+              href="https://medium.com/stakingbits/setting-up-metamask-for-polygon-matic-network-838058f6d844"
               >Click here to check how to do this</a
             >
           </h3>
@@ -124,6 +124,8 @@ export default {
   },
   methods: {
     async connectToMetamask() {
+      this.$gtm.push({ event: 'connect-to-a-metamask' })
+
       try {
         const { ethereum } = window
         Web3EthContract.setProvider(ethereum)
@@ -166,6 +168,8 @@ export default {
         .mint(address, this.count)
         .send({ from: address, value: calculatedCost, gasLimit: '285000' })
         .on('recipt', () => window.reload())
+
+      this.$gtm.push({ event: 'minting' })
 
       this.error = '- miniting...'
     },
