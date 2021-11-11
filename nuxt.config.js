@@ -35,7 +35,6 @@ export default {
     id: process.env.GTM_ID || 'GTM-TFXMRV3',
     scriptDefer: true,
     pageTracking: true,
-    enabled: true,
     // layer: 'test',
     variables: {
       test: '1',
