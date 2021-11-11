@@ -156,6 +156,8 @@ export default {
       this.invalidNetwork = networkId != Configuration.network
       if (!this.invalidNetwork) {
         this.$gtm.push({ event: 'correct-network' })
+      } else {
+        this.$gtm.push({ event: 'incorrect-network' })
       }
 
       this.$forceUpdate()
