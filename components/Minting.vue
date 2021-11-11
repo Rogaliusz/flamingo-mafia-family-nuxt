@@ -29,12 +29,13 @@
       data-aos="fade-up"
     >
       <button
+        id="btn-connect-to-metamask"
         class="minting-button"
         style="width: 100%"
         @click="connectToMetamask()"
       >
         <h3 style="width: 100%; margin: 20px 0px">
-          To mint a fresh Flamingo, please connect to a Metamask
+          To mint a fresh Flamingo, please connect to Your Metamask.
         </h3>
       </button>
     </div>
