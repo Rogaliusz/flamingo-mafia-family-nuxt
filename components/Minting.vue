@@ -170,11 +170,25 @@ export default {
 
       const address = accounts[0]
       const calculatedCost = this.cost * this.count
+      const gasPrice = 485000
+      const gasLimit = String(gasPrice * this.cost)
 
       this.smartContract.methods
         .mint(address, this.count)
-        .send({ from: address, value: calculatedCost, gasLimit: '285000' })
-        .on('recipt', () => window.reload())
+        .send({
+          from: address,
+          value: calculatedCost,
+          gasLimit: String(gasLimit),
+        })
+        .once('error', () => {
+          this.error =
+            'Something goes wrong, please try again or contact us by discord'
+          this.$forceUpdate()
+        })
+        .then((receipt) => {
+          this.error = 'Congrats! Your NFT should be on the OpenSea.'
+          this.$forceUpdate()
+        })
 
       this.$gtm.push({ event: 'minting' })
 
