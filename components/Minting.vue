@@ -178,7 +178,7 @@ export default {
         .send({
           from: address,
           value: calculatedCost,
-          gasLimit: String(gasLimit),
+          gasLimit: gasLimit.toString(),
         })
         .once('error', () => {
           this.error =
