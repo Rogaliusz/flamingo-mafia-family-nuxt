@@ -170,17 +170,17 @@ export default {
 
       const address = accounts[0]
       const calculatedCost = this.cost * this.count
-      const gasPrice = 485000
-      const gasLimit = gasPrice * this.cost
+      const gasPrice = 300000
+      const gasLimit = gasPrice * this.count
 
-      console.log('current has limit ' + gasLimit)
+      console.log('current gas limit ' + gasLimit)
 
       this.smartContract.methods
         .mint(address, this.count)
         .send({
           from: address,
           value: calculatedCost,
-          gasLimit: '485000',
+          gasLimit: gasLimit.toString(),
         })
         .once('error', () => {
           this.error =
