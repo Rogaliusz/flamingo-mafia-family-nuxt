@@ -173,12 +173,14 @@ export default {
       const gasPrice = 485000
       const gasLimit = gasPrice * this.cost
 
+      console.log('current has limit ' + gasLimit)
+
       this.smartContract.methods
         .mint(address, this.count)
         .send({
           from: address,
           value: calculatedCost,
-          gasLimit: gasLimit.toString(),
+          gasLimit: '485000',
         })
         .once('error', () => {
           this.error =
