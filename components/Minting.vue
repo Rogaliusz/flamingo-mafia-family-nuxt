@@ -171,7 +171,7 @@ export default {
       const address = accounts[0]
       const calculatedCost = this.cost * this.count
       const gasPrice = 485000
-      const gasLimit = String(gasPrice * this.cost)
+      const gasLimit = gasPrice * this.cost
 
       this.smartContract.methods
         .mint(address, this.count)
