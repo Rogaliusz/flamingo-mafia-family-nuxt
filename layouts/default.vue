@@ -12,14 +12,8 @@
 </template>
 <script>
 // @ is an alias to /src
-import Web3EthContract from 'web3-eth-contract'
 import AOS from 'aos'
 import 'aos/dist/aos.css' // You can also use <link> for styles
-
-function detectMetaMask() {
-  const { ethereum } = window
-  return ethereum && ethereum.isMetaMask
-}
 
 export default {
   name: 'Home',
@@ -36,23 +30,6 @@ export default {
         duration: 1000,
       })
     }, 1000)
-
-    const { ethereum } = window
-    Web3EthContract.setProvider(ethereum)
-    const metaMaskinstalled = detectMetaMask()
-    if (metaMaskinstalled) {
-      console.log('MetaMask is installed!')
-    } else {
-      return
-    }
-
-    ethereum.on('chainChanged', () => {
-      window.location.reload()
-    })
-
-    ethereum.on('accountsChanged', () => {
-      window.location.reload()
-    })
   },
 }
 </script>

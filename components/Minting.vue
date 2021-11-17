@@ -35,7 +35,7 @@
         @click="connectToMetamask()"
       >
         <h3 style="width: 100%; margin: 20px 0px">
-          To mint a fresh Flamingo, please connect to Your Metamask.
+          To mint a fresh Flamingo, click here connect to Your Metamask.
         </h3>
       </button>
     </div>
@@ -87,6 +87,11 @@ import Web3EthContract from 'web3-eth-contract'
 import Configuration from '@/static/configuration.json'
 import abi from '@/static/abi.json'
 
+function detectMetaMask() {
+  const { ethereum } = window
+  return ethereum && ethereum.isMetaMask
+}
+
 export default {
   name: 'FmfMinting',
   data: () => ({
@@ -100,52 +105,59 @@ export default {
     connected: false,
   }),
   computed: {},
-  async mounted() {
-    try {
+  mounted() {
+    const { ethereum } = window
+    Web3EthContract.setProvider(ethereum)
+    this.smartContract = new Web3EthContract(
+      abi,
+      Configuration.smartContractAddress
+    )
+
+    const metaMaskinstalled = detectMetaMask()
+    if (metaMaskinstalled) {
+      // eslint-disable-next-line no-console
+      console.log('MetaMask is installed!')
+    } else {
+      return
+    }
+
+    ethereum.on('chainChanged', async () => {
+      await this.fechData(ethereum)
+    })
+
+    ethereum.on('accountsChanged', async () => {
+      await this.fechData(ethereum)
+    })
+  },
+  methods: {
+    async connectToMetamask() {
+      this.$gtm.push({ event: 'connect-to-a-metamask' })
+
       const { ethereum } = window
       Web3EthContract.setProvider(ethereum)
       this.smartContract = new Web3EthContract(
         abi,
         Configuration.smartContractAddress
       )
-
-      const accounts = await ethereum.request({
+      await ethereum.request({
         method: 'eth_requestAccounts',
       })
 
-      this.connected = accounts.length !== 0
-      if (!this.connected) {
-        return
+      await this.fechData(ethereum)
+      this.connected = true
+    },
+    async fechData(ethereum) {
+      await this.checkNetwork(ethereum)
+      if (!this.invalidNetwork) {
+        await this.refreshData()
       }
 
-      this.$gtm.push({ event: 'metamask-connected' })
-
-      await this.checkNetwork(ethereum)
-      await this.refreshData()
-    } catch (exception) {}
-  },
-  methods: {
-    async connectToMetamask() {
-      this.$gtm.push({ event: 'connect-to-a-metamask' })
-
-      try {
-        const { ethereum } = window
-        Web3EthContract.setProvider(ethereum)
-        this.smartContract = new Web3EthContract(
-          abi,
-          Configuration.smartContractAddress
-        )
-        await ethereum.request({
-          method: 'eth_requestAccounts',
-        })
-      } catch (exception) {}
+      this.$forceUpdate()
     },
     async refreshData() {
       this.total = await this.smartContract.methods.maxSupply().call()
       this.minted = await this.smartContract.methods.totalSupply().call()
       this.cost = await this.smartContract.methods.cost().call()
-
-      this.$forceUpdate()
     },
     async checkNetwork(ethereum) {
       const networkId = await ethereum.request({
@@ -159,8 +171,6 @@ export default {
       } else {
         this.$gtm.push({ event: 'incorrect-network' })
       }
-
-      this.$forceUpdate()
     },
     async click() {
       const { ethereum } = window
