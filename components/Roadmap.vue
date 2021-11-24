@@ -7,7 +7,7 @@
         data-aos="fade-up"
         data-aos-duration="1000"
       >
-        <div class="roadmap-progress">
+        <div class="roadmap-progress done">
           <h2>3%</h2>
         </div>
 
@@ -86,7 +86,7 @@
 
       <div class="roadmap-content-container">
         <div
-          class="roadmap-description"
+          class="roadmap-description done"
           data-aos="fade-up"
           data-aos-duration="1000"
         >
@@ -171,6 +171,11 @@ export default {
 <style>
 .roadmap-container {
   display: flex;
+}
+
+.done {
+  text-decoration: line-through;
+  text-decoration-color: #f7a234;
 }
 
 .roadmap-percentage-container {

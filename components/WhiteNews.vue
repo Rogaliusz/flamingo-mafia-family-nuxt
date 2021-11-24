@@ -1,15 +1,10 @@
 <template>
   <div v-show="!closed" class="white-paper">
-    <h1>Flamingo Punks Airdrop!</h1>
+    <h1>Flamingo Punks Are live!</h1>
+    <h3>Mint Your own Flamingo Punk for a 5 Matic!</h3>
     <h3>
-      Every Flamingo Holder at 22 November 2021 will receive a free Flamingo
-      Punk!
-    </h3>
-    <h3>
-      <a
-        class="medium"
-        href=" https://flamingomafiafamily.medium.com/flamingo-punks-1st-flamingo-mafia-family-extension-a6ab9e193590"
-        >Check the Medium article to get a more info!</a
+      <a class="medium" href=" https://flamingopunks.com/"
+        >Check the Flamingo Punks website!</a
       >
     </h3>
     <br />
