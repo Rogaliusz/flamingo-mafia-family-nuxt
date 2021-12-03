@@ -7,7 +7,6 @@
 
     <div id="content" class="content-container"><Nuxt></Nuxt></div>
     <Footer />
-    <WhiteNews class="news"></WhiteNews>
   </div>
 </template>
 <script>
